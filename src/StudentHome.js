@@ -14,7 +14,7 @@ class StudentHome extends React.Component {
     };
   }
 
-  handleClick = (event) => {
+  handleClick(event) {
     console.log(event.target.id);
     const target = event.target.id;
     switch (target) {

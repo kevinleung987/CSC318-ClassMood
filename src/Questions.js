@@ -2,22 +2,41 @@ import React from 'react';
 import './styles.css';
 
 class QuestionsList extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      questions: [
-        { title: 'Why is the floyd-Marshall Algorithm O(n^3)?', votes: 5 },
-        { title: 'Can you go over what a greedy algorithm is?', votes: 3 },
-        { title: 'Can you explain what a minimum spanning tree is?', votes: 1 }
-      ]
-    }
+      questions: props.questions
+    };
+  }
+
+  delete(index) {
+    this.state.questions.splice(index, 1);
+    this.setState({ questions: this.state.questions });
+  }
+
+  renderQuestion(question, index) {
+    return (
+      <div key={index}>
+        <div className="card">
+          <div className="row">
+            {question.title}
+          </div>
+          <div className="row">
+            <i className="right material-icons">check</i>
+            <i className="right material-icons"
+              onClick={() => this.delete(index)}>delete</i>
+            <i className="right material-icons">arrow_upward</i>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   render() {
     return (
       <div>
         {
-
+          this.state.questions.map((question, index) => this.renderQuestion(question, index))
         }
       </div>
     );
