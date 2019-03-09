@@ -1,19 +1,17 @@
 language: node_js
 node_js:
-  - "10"
-dist: trusty
-sudo: required
-branches:
-  only:
-  - master
-before_script:
-  - npm install -g @angular/cli
+  - "stable"
+cache:
+  directories:
+  - node_modules
 script:
-- ng build --prod --base-href https://kevinleung987.github.io/CSC318-ClassMood/
+  - PUBLIC_URL=https://kevinleung987.github.io/CSC318-ClassMood/
+  - npm run build
+
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/
+  local_dir: build
   on:
     branch: master
