@@ -8,4 +8,8 @@ High fidelity prototype for CSC318 - Design of Interactive Computational Media.
 - Navigate to the folder and run `npm install`
 - Run `npm run start` and it should will the app in your browser at localhost:4200
 
+# Development
+- [MaterializeCSS](https://materializecss.com/)
+- [Angular 7](https://angular.io/guide/quickstart)
+
 Builds are automatically run on every commit and the latest build is deployed to `https://kevinleung987.github.io/CSC318-ClassMood/`
