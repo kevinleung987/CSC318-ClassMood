@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './Nav';
 import './styles.css';
+import { Link } from 'react-router-dom';
 import QuestionsList from './Questions';
 import M from 'materialize-css';
 
@@ -22,7 +22,11 @@ class QuestionsMenu extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <nav><div className="nav-wrapper blue">
+          <Link to="/" className="left nav-button"><i className="material-icons">exit_to_app</i></Link>
+          <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
+          <Link to="/student" className="right nav-button"><i className="material-icons">home</i></Link>
+        </div></nav>
         <div className="container">
           <h3 className="center-align">Questions</h3>
           <QuestionsList questions={this.questions} />

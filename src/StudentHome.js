@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
-import Navbar from './Nav';
 
 class StudentHome extends React.Component {
   constructor() {
@@ -33,7 +32,11 @@ class StudentHome extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <nav><div className="nav-wrapper blue">
+          <Link to="/" className="left nav-button"><i className="material-icons">exit_to_app</i></Link>
+          <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
+          <Link to="/questions" className="right nav-button"><i className="material-icons">list</i></Link>
+        </div></nav>
         <div className="container">
           <div className="row">
             <h1 className="center-align">I/I'm...</h1>

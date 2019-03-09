@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Nav';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
@@ -7,7 +6,10 @@ class SettingsMenu extends React.PureComponent {
   render() {
     return (
       <div>
-        <Navbar />
+        <nav><div className="nav-wrapper blue">
+          <Link to="/" className="left nav-button"><i className="material-icons">exit_to_app</i></Link>
+          <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
+        </div></nav>
         <div className="container">
           <h3 className="center-align">Settings</h3>
           <div className="row">
