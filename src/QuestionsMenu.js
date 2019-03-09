@@ -9,9 +9,9 @@ class QuestionsMenu extends React.Component {
   constructor() {
     super();
     this.questions = [
-      { title: 'Why is the floyd-Marshall Algorithm O(n^3)?', votes: 5 },
-      { title: 'Can you go over what a greedy algorithm is?', votes: 3 },
-      { title: 'Can you explain what a minimum spanning tree is?', votes: 1 }
+      { title: 'Why is the floyd-Marshall Algorithm O(n^3)?', votes: 5, answered: false },
+      { title: 'Can you go over what a greedy algorithm is?', votes: 3, answered: false },
+      { title: 'Can you explain what a minimum spanning tree is?', votes: 1, answered: false }
     ];
   }
 
@@ -21,7 +21,7 @@ class QuestionsMenu extends React.Component {
 
   postQuestion() {
     console.log(document.querySelector('#question').value);
-    this.questions.push({ title: document.querySelector('#question').value, votes: 0 });
+    this.questions.push({ title: document.querySelector('#question').value, votes: 0, answered: false });
   }
 
   render() {
