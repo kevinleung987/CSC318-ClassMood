@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 import Navbar from './Nav';
 
 class StudentHome extends React.Component {
@@ -39,13 +40,13 @@ class StudentHome extends React.Component {
           </div>
           <div className="row">
             <div className="col s8 offset-s2">
-              <div className="col s6">
+              <div className="left">
                 <div
                   id="confused"
                   className={this.state.confused ? 'btn yellow' : 'btn grey'}
                   onClick={this.handleClick.bind(this)}>Confused</div>
               </div>
-              <div className="col s6">
+              <div className="right">
                 <div
                   id="question"
                   className={this.state.question ? 'btn purple' : 'btn grey'}
@@ -55,19 +56,22 @@ class StudentHome extends React.Component {
           </div>
           <div className="row">
             <div className="col s8 offset-s2">
-              <div className="col s6">
+              <div className="left">
                 <div
                   id="hear"
                   className={this.state.hear ? 'btn orange' : 'btn grey'}
                   onClick={this.handleClick.bind(this)}>Can't Hear</div>
               </div>
-              <div className="col s6">
+              <div className="right">
                 <div
                   id="break"
                   className={this.state.break ? 'btn green' : 'btn grey'}
                   onClick={this.handleClick.bind(this)}>Need a Break</div>
               </div>
             </div>
+          </div>
+          <div className="center">
+            <Link to="/questions" className="blue btn">Write a Question</Link>
           </div>
         </div>
       </div>

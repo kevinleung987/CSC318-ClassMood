@@ -1,19 +1,21 @@
 import React from 'react';
 import Navbar from './Nav';
 import './styles.css';
+import QuestionsList from './Questions';
 
-class LecturerHome extends React.PureComponent {
+class QuestionsMenu extends React.PureComponent {
+
   render() {
     return (
       <div>
         <Navbar />
         <div className="container">
-          <h3 className="center-align">Lecturer</h3>
-          <h5 className="center-align">Code: demo</h5>
+          <h3 className="center-align">Questions</h3>
+          <QuestionsList />
         </div>
       </div>
     );
   }
 }
 
-export default LecturerHome;
+export default QuestionsMenu;
