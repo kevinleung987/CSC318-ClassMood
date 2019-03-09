@@ -19,6 +19,11 @@ class QuestionsMenu extends React.Component {
     M.AutoInit();
   }
 
+  postQuestion() {
+    console.log(document.querySelector('#question').value);
+    this.questions.push({ title: document.querySelector('#question').value, votes: 0 });
+  }
+
   render() {
     return (
       <div>
@@ -34,11 +39,18 @@ class QuestionsMenu extends React.Component {
         <a id="fixedButton" href="#modal" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">add</i></a>
         <div id="modal" className="modal">
           <div className="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h4>Write a Question</h4>
+            <div className="input-field col s8">
+              <input
+                id="question"
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="question">Question:</label>
+            </div>
           </div>
           <div className="modal-footer">
-            <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#!" className="modal-close btn-flat" onClick={() => this.postQuestion()}>Post</a>
           </div>
         </div>
       </div>
