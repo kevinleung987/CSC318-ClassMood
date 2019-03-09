@@ -1,13 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import StartMenu from './Start.js';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import StartMenu from './StartMenu';
+import StudentHome from './StudentHome';
 
 function Start() {
   return <StartMenu />;
 }
 
-function About() {
-  return <h2>About</h2>;
+function Student() {
+  return <StudentHome />;
 }
 
 function Users() {
@@ -19,7 +20,7 @@ function AppRouter() {
     <Router>
       <div>
         <Route path="/" exact component={Start} />
-        <Route path="/about/" component={About} />
+        <Route path="/student/" component={Student} />
         <Route path="/users/" component={Users} />
       </div>
     </Router>

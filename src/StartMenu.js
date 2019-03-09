@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-class StartMenu extends React.Component {
+class StartMenu extends React.PureComponent {
   render() {
     return (
       <div className="container">
@@ -12,14 +13,23 @@ class StartMenu extends React.Component {
             <input
               id="lecture_id"
               type="text"
-              className="validate" />
+              className="validate"
+            />
             <label htmlFor="lecture_id">Lecture ID:</label>
           </div>
         </div>
         <div className="row">
-          <div className="col s4 offset-s2 waves-effect waves-light btn"
-          >Attend</div>
-          <div className="col s4 waves-effect waves-light orange btn">Create</div>
+          <Link
+            to="/student"
+            className="col s6 offset-s3 waves-effect waves-light btn"
+          >
+            Attend
+          </Link>
+        </div>
+        <div className="row">
+          <Link
+            to="/create"
+            className="col s6 offset-s3 waves-effect waves-light orange btn">Create</Link>
         </div>
       </div>
     );
