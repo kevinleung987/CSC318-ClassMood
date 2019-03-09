@@ -12,4 +12,4 @@ High fidelity prototype for CSC318 - Design of Interactive Computational Media.
 - [MaterializeCSS](https://materializecss.com/)
 - [React](https://reactjs.org/)
 
-Builds are automatically run on every commit and the latest build is deployed to `https://kevinleung987.github.io/CSC318-ClassMood/`
+Builds are automatically run on every commit and the latest build is deployed to `https://kevinleung987.github.io/csc318-classmood/`

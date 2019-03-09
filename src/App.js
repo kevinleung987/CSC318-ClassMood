@@ -33,7 +33,7 @@ function Questions() {
 
 function AppRouter() {
   return (
-    <Router>
+    <Router basename="/csc318-classmood">
       <div>
         <Route path="/" exact component={Start} />
         <Route path="/student/" component={Student} />
