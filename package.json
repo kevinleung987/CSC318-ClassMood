@@ -2,6 +2,7 @@
   "name": "room-mood",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kevinleung987.github.io/CSC318-ClassMood/",
   "dependencies": {
     "materialize-css": "^1.0.0",
     "react": "^16.8.4",

@@ -9,7 +9,16 @@ class SettingsMenu extends React.PureComponent {
       <div>
         <Navbar />
         <div className="container">
-          Settings</div>
+          <h3 className="center-align">Settings</h3>
+          <div className="row">
+            <div className="left">
+              <div className="blue btn">Default</div>
+            </div>
+            <div className="right">
+              <Link to="/lecturer" className="green btn">Done</Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

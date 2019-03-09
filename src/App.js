@@ -4,6 +4,7 @@ import StartMenu from './StartMenu';
 import StudentHome from './StudentHome';
 import CreateMenu from './CreateMenu';
 import SettingsMenu from './Settings';
+import LecturerHome from './LecturerHome';
 
 function Start() {
   return <StartMenu />;
@@ -11,6 +12,10 @@ function Start() {
 
 function Student() {
   return <StudentHome />;
+}
+
+function Lecturer() {
+  return <LecturerHome />;
 }
 
 function Create() {
@@ -27,6 +32,7 @@ function AppRouter() {
       <div>
         <Route path="/" exact component={Start} />
         <Route path="/student/" component={Student} />
+        <Route path="/lecturer/" component={Lecturer} />
         <Route path="/create/" component={Create} />
         <Route path="/settings/" component={Settings} />
       </div>
