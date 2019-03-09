@@ -39,7 +39,7 @@ class QuestionsMenu extends React.Component {
         <a id="fixedButton" href="#modal" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">add</i></a>
         <div id="modal" className="modal">
           <div className="modal-content">
-            <h4>Write a Question</h4>
+            <h4>Write Your Question</h4>
             <div className="input-field col s8">
               <input
                 id="question"
