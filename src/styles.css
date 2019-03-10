@@ -14,7 +14,6 @@ code {
     monospace;
 }
 
-
 .nav-button {
   margin-left: 1em;
   margin-right: 1em;
@@ -41,4 +40,13 @@ code {
 
 .clickable {
   cursor: pointer;
+}
+
+.dropdown-trigger {
+  width: 100%;
+  padding: 0px;
+}
+
+nav {
+  white-space: nowrap;
 }

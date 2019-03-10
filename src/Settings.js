@@ -4,7 +4,6 @@ import './styles.css';
 import M from 'materialize-css';
 
 class SettingsMenu extends React.Component {
-
   constructor() {
     super();
     this.state = {
@@ -50,16 +49,16 @@ class SettingsMenu extends React.Component {
   renderRow(setting) {
     return (
       <div className="row" key={setting}>
-        <form action="#">
-          <div className="col s4">{this.state[setting].title} Counter Threshold: <b>{this.state[setting].threshold}</b></div>
-          <p className="range-field col s5">
+        <div className="col s3">{this.state[setting].title}: <b>{this.state[setting].threshold}</b></div>
+        <form action="#" className="col s4">
+          <p className="range-field">
             <input type="range" id={setting} min="0" max="100"
               onChange={this.handleChange.bind(this)}
               value={this.state[setting].threshold}
             />
           </p>
         </form>
-        <div className="col s2">
+        <div className="col s4">
           <a className='dropdown-trigger btn' href='#!' data-target='dropdown1'>{this.state[setting].alarm}</a>
           <ul id='dropdown1' className='dropdown-content' onClick={(event) => this.handleAlarm(event, setting)}>
             <li><a href="#!">1 Beep</a></li>
@@ -84,7 +83,7 @@ class SettingsMenu extends React.Component {
           <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
         </div></nav>
         <div className="container">
-          <h3 className="center-align">Class Settings</h3>
+          <h3 className="center-align">Class Settings - Counter Thresholds</h3>
           {['confused', 'question', 'hear', 'break'].map(setting => this.renderRow(setting))}
           <div className="row">
             <div className="left">

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import QuestionsList from './Questions';
 
 class LecturerHome extends React.Component {
-
   constructor() {
     super();
     this.questions = [
