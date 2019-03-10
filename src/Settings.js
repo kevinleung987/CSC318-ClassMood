@@ -8,10 +8,10 @@ class SettingsMenu extends React.Component {
   constructor() {
     super();
     this.state = {
-      confused: { threshold: 20, alarm: '1 Beep' },
-      question: { threshold: 5, alarm: '2 Beeps' },
-      hear: { threshold: 2, alarm: '1 Boop' },
-      break: { threshold: 25, alarm: '2 Boops' },
+      confused: { title: '"I\'m confused"', threshold: 20, alarm: '1 Beep' },
+      question: { title: '"I have a question"', threshold: 5, alarm: '2 Beeps' },
+      hear: { title: '"I can\'t hear"', threshold: 2, alarm: '1 Boop' },
+      break: { title: '"I need a break"', threshold: 25, alarm: '2 Boops' },
     };
   }
 
@@ -29,7 +29,7 @@ class SettingsMenu extends React.Component {
     return (
       <div className="row" key={setting}>
         <form action="#">
-          <div className="col s3">"I'm Confused" Counter Threshold: <b>{this.state[setting].threshold}</b></div>
+          <div className="col s3">{this.state[setting].title} Counter Threshold: <b>{this.state[setting].threshold}</b></div>
           <p className="range-field col s5">
             <input type="range" id={setting} min="0" max="100"
               onChange={this.handleChange.bind(this)}
