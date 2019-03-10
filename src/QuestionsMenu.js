@@ -2,19 +2,23 @@ import React from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import QuestionsList from './Questions';
-import StudentHome from './StudentHome';
 import M from 'materialize-css';
 
 class QuestionsMenu extends React.Component {
 
   constructor() {
     super();
-    this.student = new StudentHome();
     this.questions = [
       { title: 'Why is the floyd-Marshall Algorithm O(n^3)?', votes: 5, answered: false },
       { title: 'Can you go over what a greedy algorithm is?', votes: 3, answered: false },
       { title: 'Can you explain what a minimum spanning tree is?', votes: 1, answered: false }
     ];
+    this.state = {
+      confused: false,
+      question: false,
+      hear: false,
+      break: false
+    };
   }
 
   componentDidMount() {
@@ -26,6 +30,21 @@ class QuestionsMenu extends React.Component {
     this.questions.push({ title: document.querySelector('#question').value, votes: 0, answered: false });
   }
 
+  handleClick(event) {
+    const target = event.target.id;
+    switch (target) {
+      case 'confused':
+        this.setState({ ...this.state, confused: !this.state.confused }); break;
+      case 'question':
+        this.setState({ ...this.state, question: !this.state.question }); break;
+      case 'hear':
+        this.setState({ ...this.state, hear: !this.state.hear }); break;
+      case 'break':
+        this.setState({ ...this.state, break: !this.state.break }); break;
+      default: break;
+    }
+  }
+
   render() {
     return (
       <div>
@@ -34,35 +53,35 @@ class QuestionsMenu extends React.Component {
           <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
         </div></nav>
         <div className="row">
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Confused</h5>
-                <div
-                  id="confused"
-                  className={this.student.state.confused ? 'btn-floating btn yellow' : 'btn-floating btn grey lighten-3'}
-                  onClick={this.student.handleClick.bind(this.student)}></div>
-              </div>
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Question</h5>
-                <div
-                  id="question"
-                  className={this.student.state.question ? 'btn-floating btn purple' : 'btn-floating btn grey lighten-3'}
-                  onClick={this.student.handleClick.bind(this.student)}></div>
-              </div>
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Hear</h5>
-                <div
-                  id="hear"
-                  className={this.student.state.hear ? 'btn-floating btn orange' : 'btn-floating btn grey lighten-3'}
-                  onClick={this.student.handleClick.bind(this.student)}></div>
-              </div>
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Break</h5>
-                <div
-                  id="break"
-                  className={this.student.state.break ? 'btn-floating btn green' : 'btn-floating btn grey lighten-3'}
-                  onClick={this.student.handleClick.bind(this.student)}></div>
-              </div>
-          </div> 
+          <div className="center-align col s12 m6 l3">
+            <h5>Confused</h5>
+            <div
+              id="confused"
+              className={this.state.confused ? 'btn-floating btn yellow' : 'btn-floating btn grey lighten-3'}
+              onClick={this.handleClick.bind(this)}></div>
+          </div>
+          <div className="center-align col s12 m6 l3">
+            <h5>Question</h5>
+            <div
+              id="question"
+              className={this.state.question ? 'btn-floating btn purple' : 'btn-floating btn grey lighten-3'}
+              onClick={this.handleClick.bind(this)}></div>
+          </div>
+          <div className="center-align col s12 m6 l3">
+            <h5>Hear</h5>
+            <div
+              id="hear"
+              className={this.state.hear ? 'btn-floating btn orange' : 'btn-floating btn grey lighten-3'}
+              onClick={this.handleClick.bind(this)}></div>
+          </div>
+          <div className="center-align col s12 m6 l3">
+            <h5>Break</h5>
+            <div
+              id="break"
+              className={this.state.break ? 'btn-floating btn green' : 'btn-floating btn grey lighten-3'}
+              onClick={this.handleClick.bind(this)}></div>
+          </div>
+        </div>
         <div className="container">
           <h3 className="center-align">Questions</h3>
           <QuestionsList questions={this.questions} />

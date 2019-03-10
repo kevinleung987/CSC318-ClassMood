@@ -24,28 +24,28 @@ class LecturerHome extends React.Component {
         <div className="container">
           <h3 className="center-align">Lecturer</h3>
           <div className="row">
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Confused</h5>
-                <a className="">3</a>
-              </div>
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Question</h5>
-                <a className="">2</a>
-              </div>
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Hear</h5>
-                <a className="">5</a>
-              </div>
-              <div className="center-align col s12 m6 l3">
-                <h5 className="">Break</h5>
-                <a className="">8</a>
-              </div>
-          </div>         
+            <div className="center-align col s12 m6 l3">
+              <h5 >Confused</h5>
+              <a href="#!">3</a>
+            </div>
+            <div className="center-align col s12 m6 l3">
+              <h5 >Question</h5>
+              <a href="#!">2</a>
+            </div>
+            <div className="center-align col s12 m6 l3">
+              <h5 >Hear</h5>
+              <a href="#!">5</a>
+            </div>
+            <div className="center-align col s12 m6 l3">
+              <h5 >Break</h5>
+              <a href="#!">8</a>
+            </div>
+          </div>
           <QuestionsList questions={this.questions} />
         </div>
-            <div className="right">
-              <Link to="/settings" id="fixedButton" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">settings</i></Link>
-            </div>
+        <div className="right">
+          <Link to="/settings" id="fixedButton" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">settings</i></Link>
+        </div>
       </div>
     );
   }
