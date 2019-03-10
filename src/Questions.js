@@ -49,15 +49,14 @@ class QuestionsList extends React.Component {
 
   render() {
     return (
-      <div>
-      
+      <div className="questions-list">
         {
-          this.state.questions.sort(function(a, b) {
-              if (a.answered && !b.answered) return 1;
-              else if (!a.answered && b.answered) return -1;
-              else if (a.answered && b.answered) return 0;
-              else return b.votes - a.votes;
-              }).map((question, index) => this.renderQuestion(question, index))
+          this.state.questions.sort(function (a, b) {
+            if (a.answered && !b.answered) return 1;
+            else if (!a.answered && b.answered) return -1;
+            else if (a.answered && b.answered) return 0;
+            else return b.votes - a.votes;
+          }).map((question, index) => this.renderQuestion(question, index))
         }
       </div>
     );

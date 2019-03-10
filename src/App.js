@@ -6,35 +6,15 @@ import SettingsMenu from './Settings';
 import LecturerHome from './LecturerHome';
 import QuestionsMenu from './QuestionsMenu';
 
-function Start() {
-  return <StartMenu />;
-}
-
-function Lecturer() {
-  return <LecturerHome />;
-}
-
-function Create() {
-  return <CreateMenu />;
-}
-
-function Settings() {
-  return <SettingsMenu />;
-}
-
-function Questions() {
-  return <QuestionsMenu />;
-}
-
 function AppRouter() {
   return (
     <Router basename="/csc318-classmood">
       <div>
-        <Route path="/" exact component={Start} />
-        <Route path="/lecturer/" component={Lecturer} />
-        <Route path="/create/" component={Create} />
-        <Route path="/settings/" component={Settings} />
-        <Route path="/questions/" component={Questions} />
+        <Route path="/" exact component={() => <StartMenu />} />
+        <Route path="/lecturer/" component={() => <LecturerHome />} />
+        <Route path="/create/" component={() => <CreateMenu />} />
+        <Route path="/settings/" component={() => <SettingsMenu />} />
+        <Route path="/questions/" component={() => <QuestionsMenu />} />
       </div>
     </Router>
   );
