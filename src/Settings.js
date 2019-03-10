@@ -20,14 +20,34 @@ class SettingsMenu extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target.id);
     const newState = this.state;
     newState[event.target.id]['threshold'] = event.target.value
     this.setState(newState);
   }
 
   renderRow(setting) {
-
+    return (
+      <div className="row" key={setting}>
+        <form action="#">
+          <div className="col s3">"I'm Confused" Counter Threshold: <b>{this.state[setting].threshold}</b></div>
+          <p className="range-field col s5">
+            <input type="range" id={setting} min="0" max="100"
+              onChange={this.handleChange.bind(this)}
+              value={this.state[setting].threshold}
+            />
+          </p>
+        </form>
+        <div className="col s4">
+          <a className='dropdown-trigger btn' href='#!' data-target='dropdown1'>{this.state[setting].alarm}</a>
+          <ul id='dropdown1' className='dropdown-content'>
+            <li><a href="#!">1 Beep</a></li>
+            <li><a href="#!">2 Beeps</a></li>
+            <li className="divider" tabIndex="-1"></li>
+            <li><a href="#!">1 Boop</a></li>
+            <li><a href="#!">2 Boops</a></li>
+          </ul></div>
+      </div>
+    );
   }
 
   render() {
@@ -38,26 +58,8 @@ class SettingsMenu extends React.Component {
           <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
         </div></nav>
         <div className="container">
-          <h3 className="center-align">Settings</h3>
-          <div className="row">
-            <form action="#">
-              <div className="col s3">"I'm Confused" Counter Threshold: <b>{this.state.confused.threshold}</b></div>
-              <p className="range-field col s5">
-                <input type="range" id="confused" min="0" max="100"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </p>
-            </form>
-            <div className="col s4">
-              <a className='dropdown-trigger btn' href='#!' data-target='dropdown1'>{this.state.confused.alarm}</a>
-              <ul id='dropdown1' className='dropdown-content'>
-                <li><a href="#!">1 Beep</a></li>
-                <li><a href="#!">2 Beeps</a></li>
-                <li className="divider" tabIndex="-1"></li>
-                <li><a href="#!">1 Boop</a></li>
-                <li><a href="#!">2 Boops</a></li>
-              </ul></div>
-          </div>
+          <h3 className="center-align">Class Settings</h3>
+          {['confused', 'question', 'hear', 'break'].map(setting => this.renderRow(setting))}
           <div className="row">
             <div className="left">
               <div className="blue btn">Default</div>
