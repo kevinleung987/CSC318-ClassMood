@@ -37,6 +37,12 @@ class SettingsMenu extends React.Component {
     this.setState(newState);
   }
 
+  handleAlarm(event, setting) {
+    const newState = this.state;
+    newState[setting]['alarm'] = event.target.text;
+    this.setState(newState);
+  }
+
   resetSetting() {
     this.setState(this.default);
   }
@@ -55,7 +61,7 @@ class SettingsMenu extends React.Component {
         </form>
         <div className="col s2">
           <a className='dropdown-trigger btn' href='#!' data-target='dropdown1'>{this.state[setting].alarm}</a>
-          <ul id='dropdown1' className='dropdown-content'>
+          <ul id='dropdown1' className='dropdown-content' onClick={(event) => this.handleAlarm(event, setting)}>
             <li><a href="#!">1 Beep</a></li>
             <li><a href="#!">2 Beeps</a></li>
             <li className="divider" tabIndex="-1"></li>
