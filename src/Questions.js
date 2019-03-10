@@ -29,7 +29,7 @@ class QuestionsList extends React.Component {
   renderQuestion(question, index) {
     return (
       <div key={index}>
-        <div className={question.answered ? 'card green' : 'card'}>
+        <div className={question.answered ? 'card grey lighten-3 white-text' : 'card'}>
           <div className="row">
             {question.title}
           </div>
@@ -40,7 +40,7 @@ class QuestionsList extends React.Component {
               onClick={() => this.delete(index)}>delete</i>
             <i className="right material-icons"
               onClick={() => this.upVote(index)}>arrow_upward</i>
-            <b className="votes right">{question.votes}</b>
+            <b className="right">{question.votes}</b>
           </div>
         </div>
       </div>
@@ -50,8 +50,14 @@ class QuestionsList extends React.Component {
   render() {
     return (
       <div>
+      
         {
-          this.state.questions.map((question, index) => this.renderQuestion(question, index))
+          this.state.questions.sort(function(a, b) {
+              if (a.answered && !b.answered) return 1;
+              else if (!a.answered && b.answered) return -1;
+              else if (a.answered && b.answered) return 0;
+              else return b.votes - a.votes;
+              }).map((question, index) => this.renderQuestion(question, index))
         }
       </div>
     );
