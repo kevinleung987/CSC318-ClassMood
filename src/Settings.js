@@ -31,6 +31,16 @@ class SettingsMenu extends React.Component {
     this.setState(newState);
   }
   
+  setName(setting){
+	  switch (setting){
+		  case 'confused': return ("I'm Confused"); break;
+		  case 'question' : return ("Have a question"); break;
+		  case 'hear' : return ("Cannot Hear"); break;
+		  case 'break' : return ("Need a Break"); break;
+		default : break;
+	  }
+  }
+  
   resetSetting() {
 	  const newState = this.state;
 	  newState['confused'].threshold = this.stated['confused'].threshold;
@@ -44,7 +54,7 @@ class SettingsMenu extends React.Component {
     return (
       <div className="row" key={setting}>
         <form action="#">
-          <div className="col s3">"I'm Confused" Counter Threshold: <b>{this.state[setting].threshold}</b></div>
+          <div className="col s3"> "{this.setName(setting)}" Counter Threshold: <b>{this.state[setting].threshold}</b></div>
           <p className="range-field col s5">
             <input type="range" id={setting} min="0" max="100"
               onChange={this.handleChange.bind(this)}
