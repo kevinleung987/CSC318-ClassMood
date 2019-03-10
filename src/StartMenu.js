@@ -9,27 +9,14 @@ class StartMenu extends React.PureComponent {
           <h1 className="center-align">Class Mood</h1>
         </div>
         <div className="row">
-          <div className="input-field col s10 offset-s1">
-            <input
-              id="lecture_id"
-              type="text"
-              className="validate"
-            />
-            <label htmlFor="lecture_id">Lecture ID:</label>
-          </div>
+          <Link
+            to="/questions"
+            className="col s6 offset-s3 waves-effect waves-light btn">Student</Link>
         </div>
         <div className="row">
           <Link
-            to="/student"
-            className="col s6 offset-s3 waves-effect waves-light btn"
-          >
-            Attend
-          </Link>
-        </div>
-        <div className="row">
-          <Link
-            to="/create"
-            className="col s6 offset-s3 waves-effect waves-light orange btn">Create</Link>
+            to="/settings"
+            className="col s6 offset-s3 waves-effect waves-light orange btn">Lecturer</Link>
         </div>
       </div>
     );

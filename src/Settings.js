@@ -54,8 +54,8 @@ class SettingsMenu extends React.Component {
     return (
       <div>
         <nav><div className="nav-wrapper blue">
-          <Link to="/" className="left nav-button"><i className="material-icons">exit_to_app</i></Link>
           <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
+          <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
         </div></nav>
         <div className="container">
           <h3 className="center-align">Class Settings</h3>

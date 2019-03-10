@@ -18,8 +18,8 @@ class LecturerHome extends React.Component {
     return (
       <div>
         <nav><div className="nav-wrapper blue">
-          <Link to="/" className="left nav-button"><i className="material-icons">exit_to_app</i></Link>
           <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
+          <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
         </div></nav>
         <div className="container">
           <h3 className="center-align">Lecturer</h3>
@@ -43,6 +43,9 @@ class LecturerHome extends React.Component {
           </div>         
           <QuestionsList questions={this.questions} />
         </div>
+            <div className="right">
+              <Link to="/settings" id="fixedButton" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">settings</i></Link>
+            </div>
       </div>
     );
   }

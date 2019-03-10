@@ -33,9 +33,9 @@ class StudentHome extends React.Component {
     return (
       <div>
         <nav><div className="nav-wrapper blue">
-          <Link to="/" className="left nav-button"><i className="material-icons">exit_to_app</i></Link>
+          <Link to="/questions" className="left nav-button"><i className="material-icons">list</i></Link>
           <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
-          <Link to="/questions" className="right nav-button"><i className="material-icons">list</i></Link>
+          <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
         </div></nav>
         <div className="container">
           <div className="row">
