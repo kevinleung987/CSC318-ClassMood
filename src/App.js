@@ -4,7 +4,7 @@ import StartMenu from './StartMenu';
 import CreateMenu from './CreateMenu';
 import SettingsMenu from './Settings';
 import LecturerHome from './LecturerHome';
-import QuestionsMenu from './QuestionsMenu';
+import StudentHome from './StudentHome';
 
 function AppRouter() {
   return (
@@ -14,7 +14,7 @@ function AppRouter() {
         <Route path="/lecturer/" component={() => <LecturerHome />} />
         <Route path="/create/" component={() => <CreateMenu />} />
         <Route path="/settings/" component={() => <SettingsMenu />} />
-        <Route path="/questions/" component={() => <QuestionsMenu />} />
+        <Route path="/questions/" component={() => <StudentHome />} />
       </div>
     </Router>
   );
