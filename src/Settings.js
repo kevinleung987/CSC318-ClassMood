@@ -8,16 +8,16 @@ class SettingsMenu extends React.Component {
   constructor() {
     super();
     this.state = {
+      confused: { title: '"I\'m confused"', threshold: 20, alarm: '1 Beep', muted: false },
+      question: { title: '"I have a question"', threshold: 5, alarm: '2 Beeps', muted: false },
+      hear: { title: '"I can\'t hear"', threshold: 2, alarm: '1 Boop', muted: false },
+      break: { title: '"I need a break"', threshold: 25, alarm: '2 Boops', muted: false }
+    };
+    this.default = {
       confused: { title: '"I\'m confused"', threshold: 20, alarm: '1 Beep' },
       question: { title: '"I have a question"', threshold: 5, alarm: '2 Beeps' },
       hear: { title: '"I can\'t hear"', threshold: 2, alarm: '1 Boop' },
       break: { title: '"I need a break"', threshold: 25, alarm: '2 Boops' }
-    }
-    this.default = {
-      confused: { threshold: 20, alarm: '1 Beep' },
-      question: { threshold: 5, alarm: '2 Beeps' },
-      hear: { threshold: 2, alarm: '1 Boop' },
-      break: { threshold: 25, alarm: '2 Boops' },
     };
   }
 
@@ -31,20 +31,21 @@ class SettingsMenu extends React.Component {
     this.setState(newState);
   }
 
-  resetSetting() {
+  handleMute(setting) {
     const newState = this.state;
-    newState['confused'].threshold = this.default['confused'].threshold;
-    newState['question'].threshold = this.default['question'].threshold;
-    newState['hear'].threshold = this.default['hear'].threshold;
-    newState['break'].threshold = this.default['break'].threshold;
+    newState[setting]['muted'] = !newState[setting]['muted'];
     this.setState(newState);
+  }
+
+  resetSetting() {
+    this.setState(this.default);
   }
 
   renderRow(setting) {
     return (
       <div className="row" key={setting}>
         <form action="#">
-          <div className="col s3">{this.state[setting].title} Counter Threshold: <b>{this.state[setting].threshold}</b></div>
+          <div className="col s4">{this.state[setting].title} Counter Threshold: <b>{this.state[setting].threshold}</b></div>
           <p className="range-field col s5">
             <input type="range" id={setting} min="0" max="100"
               onChange={this.handleChange.bind(this)}
@@ -52,7 +53,7 @@ class SettingsMenu extends React.Component {
             />
           </p>
         </form>
-        <div className="col s4">
+        <div className="col s2">
           <a className='dropdown-trigger btn' href='#!' data-target='dropdown1'>{this.state[setting].alarm}</a>
           <ul id='dropdown1' className='dropdown-content'>
             <li><a href="#!">1 Beep</a></li>
@@ -61,6 +62,10 @@ class SettingsMenu extends React.Component {
             <li><a href="#!">1 Boop</a></li>
             <li><a href="#!">2 Boops</a></li>
           </ul></div>
+        <div className="col s1">
+          <i className="material-icons clickable"
+            onClick={() => this.handleMute(setting)}>{this.state[setting].muted ? 'volume_off' : 'volume_up'}</i>
+        </div>
       </div>
     );
   }

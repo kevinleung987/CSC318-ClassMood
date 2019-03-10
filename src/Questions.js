@@ -31,14 +31,14 @@ class QuestionsList extends React.Component {
       <div key={index}>
         <div className={question.answered ? 'card grey lighten-3 white-text' : 'card'}>
           <div className="row">
-            {question.title}
+            <b className="question">{question.title}</b>
           </div>
           <div className="row">
-            <i className="right material-icons"
+            <i className="right material-icons clickable"
               onClick={() => this.answer(index)}>check</i>
-            <i className="right material-icons"
+            <i className="right material-icons clickable"
               onClick={() => this.delete(index)}>delete</i>
-            <i className="right material-icons"
+            <i className="right material-icons clickable"
               onClick={() => this.upVote(index)}>arrow_upward</i>
             <b className="right">{question.votes}</b>
           </div>
