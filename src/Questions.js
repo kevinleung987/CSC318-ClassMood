@@ -36,11 +36,20 @@ class QuestionsList extends React.Component {
           <div className="row">
             <i className="right material-icons clickable"
               onClick={() => this.answer(index)}>check</i>
-            <i className="right material-icons clickable"
-              onClick={() => this.delete(index)}>delete</i>
+            <i className="right material-icons clickable modal-trigger" href={`#delete${index}`}
+            >delete</i>
             <i className="right material-icons clickable"
               onClick={() => this.upVote(index)}>arrow_upward</i>
             <b className="right">{question.votes}</b>
+          </div>
+        </div>
+        <div id={`delete${index}`} class="modal black-text">
+          <div class="modal-content">
+            <h5>Are you sure you want to delete this question?</h5>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close right btn-flat">No</a>
+            <a href="#!" class="modal-close left btn-flat" onClick={() => this.delete(index)}>Yes</a>
           </div>
         </div>
       </div>
