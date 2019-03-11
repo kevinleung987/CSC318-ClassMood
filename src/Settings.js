@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import M from 'materialize-css';
+import NavBar from './Navbar';
 
 class SettingsMenu extends React.Component {
   constructor() {
@@ -78,10 +79,7 @@ class SettingsMenu extends React.Component {
   render() {
     return (
       <div>
-        <nav><div className="nav-wrapper blue">
-          <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
-          <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
-        </div></nav>
+        <NavBar />
         <div className="container">
           <h3 className="center-align">Class Settings - Counter Thresholds</h3>
           {['confused', 'question', 'hear', 'break'].map(setting => this.renderRow(setting))}
