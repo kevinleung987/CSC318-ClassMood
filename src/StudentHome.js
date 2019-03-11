@@ -52,28 +52,28 @@ class StudentHome extends React.Component {
           <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
         </div></nav>
         <div className="row">
-          <div className="center-align col s6">
+          <div className="center-align col s6 m6 l3">
             <h5>Confused</h5>
             <div
               id="confused"
               className={this.state.confused ? 'btn-floating btn yellow' : 'btn-floating btn grey lighten-3'}
               onClick={this.handleClick.bind(this)}></div>
           </div>
-          <div className="center-align col s6">
+          <div className="center-align col s6 m6 l3">
             <h5>Question</h5>
             <div
               id="question"
               className={this.state.question ? 'btn-floating btn purple' : 'btn-floating btn grey lighten-3'}
               onClick={this.handleClick.bind(this)}></div>
           </div>
-          <div className="center-align col s6">
+          <div className="center-align col s6 m6 l3">
             <h5>Hear</h5>
             <div
               id="hear"
               className={this.state.hear ? 'btn-floating btn orange' : 'btn-floating btn grey lighten-3'}
               onClick={this.handleClick.bind(this)}></div>
           </div>
-          <div className="center-align col s6">
+          <div className="center-align col s6 m6 l3">
             <h5>Break</h5>
             <div
               id="break"

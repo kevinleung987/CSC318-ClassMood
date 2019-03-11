@@ -23,19 +23,19 @@ class LecturerHome extends React.Component {
         <div className="container">
           <h3 className="center-align">Lecturer</h3>
           <div className="row">
-            <div className="center-align col s12 m6 l3">
+            <div className="center-align col s6 m6 l3">
               <h5 >Confused</h5>
               <a href="#!">3</a>
             </div>
-            <div className="center-align col s12 m6 l3">
+            <div className="center-align col s6 m6 l3">
               <h5 >Question</h5>
               <a href="#!">2</a>
             </div>
-            <div className="center-align col s12 m6 l3">
+            <div className="center-align col s6 m6 l3">
               <h5 >Hear</h5>
               <a href="#!">5</a>
             </div>
-            <div className="center-align col s12 m6 l3">
+            <div className="center-align col s6 m6 l3">
               <h5 >Break</h5>
               <a href="#!">8</a>
             </div>
