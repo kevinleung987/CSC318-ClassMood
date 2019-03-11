@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
-import { Link } from 'react-router-dom';
 import QuestionsList from './Questions';
 import M from 'materialize-css';
+import NavBar from './Navbar';
 
 class StudentHome extends React.Component {
   constructor() {
@@ -47,10 +47,7 @@ class StudentHome extends React.Component {
   render() {
     return (
       <div>
-        <nav><div className="nav-wrapper blue">
-          <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
-          <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
-        </div></nav>
+        <NavBar />
         <div className="row">
           <div className="center-align col s6">
             <h5>Confused</h5>

@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import QuestionsList from './Questions';
+import NavBar from './Navbar';
 
 class LecturerHome extends React.Component {
   constructor() {
@@ -16,10 +17,7 @@ class LecturerHome extends React.Component {
   render() {
     return (
       <div>
-        <nav><div className="nav-wrapper blue">
-          <a href="#!" className="brand-logo"><i className="material-icons">class</i>Class Mood</a>
-          <Link to="/" className="right nav-button"><i className="material-icons">exit_to_app</i></Link>
-        </div></nav>
+        <NavBar />
         <div className="container">
           <h3 className="center-align">Lecturer</h3>
           <div className="row">
