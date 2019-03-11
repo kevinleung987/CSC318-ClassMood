@@ -1,13 +1,13 @@
 {
-  "main.css": "/csc318-classmood/static/css/main.3d71264d.chunk.css",
-  "main.js": "/csc318-classmood/static/js/main.ab517e36.chunk.js",
-  "main.js.map": "/csc318-classmood/static/js/main.ab517e36.chunk.js.map",
+  "main.css": "/csc318-classmood/static/css/main.9668aa74.chunk.css",
+  "main.js": "/csc318-classmood/static/js/main.6971b70c.chunk.js",
+  "main.js.map": "/csc318-classmood/static/js/main.6971b70c.chunk.js.map",
   "runtime~main.js": "/csc318-classmood/static/js/runtime~main.a7c20bf1.js",
   "runtime~main.js.map": "/csc318-classmood/static/js/runtime~main.a7c20bf1.js.map",
-  "static/js/2.34b6b63d.chunk.js": "/csc318-classmood/static/js/2.34b6b63d.chunk.js",
-  "static/js/2.34b6b63d.chunk.js.map": "/csc318-classmood/static/js/2.34b6b63d.chunk.js.map",
+  "static/js/2.f0f30078.chunk.js": "/csc318-classmood/static/js/2.f0f30078.chunk.js",
+  "static/js/2.f0f30078.chunk.js.map": "/csc318-classmood/static/js/2.f0f30078.chunk.js.map",
   "index.html": "/csc318-classmood/index.html",
-  "precache-manifest.d741f92eba9f19f63ba10673a581040d.js": "/csc318-classmood/precache-manifest.d741f92eba9f19f63ba10673a581040d.js",
+  "precache-manifest.009c45cc13193720ecbbdd67a59270c3.js": "/csc318-classmood/precache-manifest.009c45cc13193720ecbbdd67a59270c3.js",
   "service-worker.js": "/csc318-classmood/service-worker.js",
-  "static/css/main.3d71264d.chunk.css.map": "/csc318-classmood/static/css/main.3d71264d.chunk.css.map"
+  "static/css/main.9668aa74.chunk.css.map": "/csc318-classmood/static/css/main.9668aa74.chunk.css.map"
 }
