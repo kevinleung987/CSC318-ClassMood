@@ -20,13 +20,12 @@ class StudentHome extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     M.AutoInit();
   }
 
   postQuestion() {
-    console.log(document.querySelector('#question').value);
-    this.questions.push({ title: document.querySelector('#question').value, votes: 0, answered: false });
+    this.questions.push({ title: document.querySelector('#newQuestion').value, votes: 0, answered: false });
   }
 
   handleClick(event) {
@@ -88,11 +87,11 @@ class StudentHome extends React.Component {
             <h4>Write Your Question</h4>
             <div className="input-field col s8">
               <input
-                id="question"
+                id="newQuestion"
                 type="text"
                 className="validate"
               />
-              <label htmlFor="question">Question:</label>
+              <label htmlFor="newQuestion">Question:</label>
             </div>
           </div>
           <div className="modal-footer">

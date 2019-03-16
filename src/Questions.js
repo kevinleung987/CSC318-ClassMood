@@ -29,13 +29,13 @@ class QuestionsList extends React.Component {
   renderQuestion(question, index) {
     return (
       <div key={index}>
-        <div className={question.answered ? 'card grey lighten-3 white-text' : 'card'}>
+        <div className={question.answered ? 'card green darken-3 white-text' : 'card'}>
           <div className="row">
             <b className="question">{question.title}</b>
           </div>
           <div className="row">
             <i className="right material-icons clickable"
-              onClick={() => this.answer(index)}>check</i>
+              onClick={() => this.answer(index)}>{question.answered ? 'undo' : 'done'}</i>
             <i className="right material-icons clickable modal-trigger" href={`#delete${index}`}
             >delete</i>
             <i className="right material-icons clickable"
@@ -43,13 +43,13 @@ class QuestionsList extends React.Component {
             <b className="right">{question.votes}</b>
           </div>
         </div>
-        <div id={`delete${index}`} class="modal black-text">
-          <div class="modal-content">
+        <div id={`delete${index}`} className="modal black-text">
+          <div className="modal-content">
             <h5>Are you sure you want to delete this question?</h5>
           </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close right btn-flat">No</a>
-            <a href="#!" class="modal-close left btn-flat" onClick={() => this.delete(index)}>Yes</a>
+          <div className="modal-footer">
+            <a href="#!" className="modal-close left green btn-flat" onClick={() => this.delete(index)}>Yes</a>
+            <a href="#!" className="modal-close right red btn-flat">No</a>
           </div>
         </div>
       </div>
