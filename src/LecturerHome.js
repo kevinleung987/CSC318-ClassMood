@@ -30,7 +30,7 @@ class LecturerHome extends React.Component {
               <a href="#!">2</a>
             </div>
             <div className="center-align col s6 m6 l3">
-              <h5 >Hear</h5>
+              <h5 >Can't Hear</h5>
               <a href="#!">5</a>
             </div>
             <div className="center-align col s6 m6 l3">

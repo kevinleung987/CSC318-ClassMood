@@ -25,6 +25,12 @@ class QuestionsList extends React.Component {
     newQuestions[index].answered = !newQuestions[index].answered;
     this.setState({ questions: newQuestions });
   }
+  
+  edit(index) {
+      const newQuestions = this.state.questions
+      newQuestions[index].title = document.querySelector('#newValue').value;
+      this.setState({ questions: newQuestions });
+  }
 
   renderQuestion(question, index) {
     return (
@@ -38,11 +44,41 @@ class QuestionsList extends React.Component {
               onClick={() => this.answer(index)}>{question.answered ? 'undo' : 'done'}</i>
             <i className="right material-icons clickable modal-trigger" href={`#delete${index}`}
             >delete</i>
+            
+            <i className="right material-icons clickable modal-trigger"
+                href={`#edit${index}`}>edit</i>
+            {/*
+            <div>
+            {isStudent ? (
+                <i className="right material-icons clickable modal-trigger"
+                href={`#edit${index}`}>edit</i>
+                ):null}
+            </div>
+            */}
+            
             <i className="right material-icons clickable"
-              onClick={() => this.upVote(index)}>arrow_upward</i>
+              onClick={() => this.upVote(index)}>arrow_upward</i>            
             <b className="right">{question.votes}</b>
           </div>
         </div>
+        
+        <div id={`edit${index}`} className="modal black-text">
+          <div className="modal-content">
+            <h4>Edit Your Question</h4>
+            <div className="input-field col s8">
+              <input
+                id="newValue"
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="newValue">{this.state.questions[index].title}</label>
+            </div>
+          </div>
+          <div className="modal-footer">
+            <a href="#!" className="modal-close btn-flat" onClick={() => this.edit(index)}>Save</a>
+          </div>
+        </div>
+        
         <div id={`delete${index}`} className="modal black-text">
           <div className="modal-content">
             <h5>Are you sure you want to delete this question?</h5>

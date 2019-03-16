@@ -44,6 +44,7 @@ class StudentHome extends React.Component {
   }
 
   render() {
+    const isStudent = true;
     return (
       <div>
         <NavBar />
@@ -63,7 +64,7 @@ class StudentHome extends React.Component {
               onClick={this.handleClick.bind(this)}></div>
           </div>
           <div className="center-align col s6 m6 l3">
-            <h5>Hear</h5>
+            <h5>Can't Hear</h5>
             <div
               id="hear"
               className={this.state.hear ? 'btn-floating btn orange' : 'btn-floating btn grey lighten-3'}
