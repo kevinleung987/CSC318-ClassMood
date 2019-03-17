@@ -36,7 +36,7 @@ class LecturerHome extends React.Component {
               <a href="#!">{this.state.question}</a>
             </div>
             <div className="center-align col s6 m6 l3">
-              <h5>Can't Hear</h5>
+              <h5>Can't Hear/See</h5>
               <a href="#!">{this.state.hear}</a>
             </div>
             <div className="center-align col s6 m6 l3">

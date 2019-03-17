@@ -28,7 +28,7 @@ class NavBar extends React.Component {
             <h4>Are you sure you want to quit?</h4>
             {this.props.isStudent ? null :
               <div>
-                <h5>Enter your Email if you would like unanswered questions emailed to you.</h5>
+                <h5>Enter your Email to save unanswered questions.</h5>
                 <div className="input-field">
                   <input
                     id="email"

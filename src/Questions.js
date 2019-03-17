@@ -63,9 +63,10 @@ class QuestionsList extends React.Component {
               <input
                 id="newValue"
                 type="text"
+                defaultValue={this.state.questions[index].title}
                 className="validate"
               />
-              <label htmlFor="newValue">{this.state.questions[index].title}</label>
+              <label htmlFor="newValue">Question</label>
             </div>
           </div>
           <div className="modal-footer">
