@@ -55,3 +55,11 @@ code {
 .modal-close.btn-flat {
   margin: 1em !important;
 }
+
+.settings-row {
+  margin-bottom: 0px;
+}
+
+.border {
+  border-bottom: 2px solid black;
+}

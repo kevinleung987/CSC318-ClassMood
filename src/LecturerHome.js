@@ -47,7 +47,7 @@ class LecturerHome extends React.Component {
           <QuestionsList questions={this.questions} />
         </div>
         <div className="right">
-          <Link to="/settings" id="fixedButton" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">settings</i></Link>
+          <Link to="/settings" id="fixedButton" className="btn btn-floating btn-large cyan"><i className="material-icons">settings</i></Link>
         </div>
       </div>
     );
