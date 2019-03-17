@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/csc318-classmood/precache-manifest.0b9dabddb99f9e1401ccb8b7f757a538.js"
+  "/csc318-classmood/precache-manifest.4f0d6ec2052ea95337fe0e1252e815d6.js"
 );
 
 workbox.clientsClaim();
