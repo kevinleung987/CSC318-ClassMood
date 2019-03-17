@@ -44,7 +44,6 @@ class StudentHome extends React.Component {
   }
 
   render() {
-    const isStudent = true;
     return (
       <div>
         <NavBar />
@@ -80,7 +79,7 @@ class StudentHome extends React.Component {
         </div>
         <div className="container">
           <h3 className="center-align">Questions</h3>
-          <QuestionsList questions={this.questions} />
+          <QuestionsList questions={this.questions} isStudent={true} />
         </div>
         <a id="fixedButton" href="#modal" className="btn btn-floating btn-large cyan modal-trigger"><i className="material-icons">add</i></a>
         <div id="modal" className="modal">

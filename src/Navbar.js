@@ -16,7 +16,7 @@ class NavBar extends React.Component {
             <i className="material-icons">class</i>Class Mood
           </a>
           <a href="#confirm" className="right nav-button modal-trigger">
-            <i className="material-icons">exit_to_app</i>
+            <i className="material-icons clickable">exit_to_app</i>
           </a>
         </div>
         <div id="confirm" className="modal black-text">
