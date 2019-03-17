@@ -51,3 +51,7 @@ code {
 .brand-logo {
   white-space: nowrap;
 }
+
+.modal-close.btn-flat {
+  margin: 1em !important;
+}

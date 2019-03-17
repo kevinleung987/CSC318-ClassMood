@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import M from "materialize-css";
 
 class NavBar extends React.Component {
+  constructor(props) {
+    super();
+  }
+
   componentDidMount() {
     M.AutoInit();
   }
@@ -21,7 +25,20 @@ class NavBar extends React.Component {
         </div>
         <div id="confirm" className="modal black-text">
           <div className="modal-content">
-            <h5>Are you sure you want to quit?</h5>
+            <h4>Are you sure you want to quit?</h4>
+            {this.props.isStudent ? null :
+              <div>
+                <h5>Enter your Email if you would like unanswered questions emailed to you.</h5>
+                <div className="input-field">
+                  <input
+                    id="email"
+                    type="text"
+                    className="validate"
+                  />
+                  <label htmlFor="email">Email</label>
+                </div>
+              </div>
+            }
           </div>
           <div className="modal-footer">
             <a href="#!" className="modal-close right red btn-flat">

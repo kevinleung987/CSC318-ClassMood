@@ -46,7 +46,7 @@ class StudentHome extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar isStudent={true} />
         <div className="row">
           <div className="center-align col s6 m6 l3">
             <h5>Confused</h5>

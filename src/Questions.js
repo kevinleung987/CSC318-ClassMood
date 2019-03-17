@@ -44,10 +44,14 @@ class QuestionsList extends React.Component {
               onClick={() => this.answer(index)}>{question.answered ? 'undo' : 'done'}</i>
             <i className="right material-icons clickable modal-trigger" href={`#delete${index}`}
             >delete</i>
-            {this.props.isStudent ? <i className="right material-icons clickable modal-trigger"
-              href={`#edit${index}`}>edit</i> : null}
-            {this.props.isStudent ? <i className="right material-icons clickable"
-              onClick={() => this.upVote(index)}>arrow_upward</i> : null}
+            {this.props.isStudent ?
+              <i className="right material-icons clickable modal-trigger"
+                href={`#edit${index}`}>edit</i>
+              : null}
+            {this.props.isStudent ?
+              <i className="right material-icons clickable"
+                onClick={() => this.upVote(index)}>arrow_upward</i>
+              : null}
             <b className="right votes">{question.votes}</b>
             {question.answered ? <b className="left question">(Answered)</b> : null}
           </div>
@@ -70,7 +74,7 @@ class QuestionsList extends React.Component {
         </div>
         <div id={`delete${index}`} className="modal black-text">
           <div className="modal-content">
-            <h5>Are you sure you want to delete this question?</h5>
+            <h4>Are you sure you want to delete this question?</h4>
           </div>
           <div className="modal-footer">
             <a href="#!" className="modal-close left green btn-flat" onClick={() => this.delete(index)}>Yes</a>
