@@ -20,6 +20,12 @@ class LecturerHome extends React.Component {
     };
   }
 
+  increment(mood) {
+    const newState = this.state;
+    newState[mood] += 1;
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div>
@@ -27,19 +33,19 @@ class LecturerHome extends React.Component {
         <div className="container">
           <h3 className="center-align">Lecturer</h3>
           <div className="row">
-            <div className="center-align col s6 m6 l3">
+            <div className="center-align col s6 m6 l3" onClick={() => this.increment('confused')}>
               <h5>Confused</h5>
               <a href="#!">{this.state.confused}</a>
             </div>
-            <div className="center-align col s6 m6 l3">
+            <div className="center-align col s6 m6 l3" onClick={() => this.increment('question')}>
               <h5>Question</h5>
               <a href="#!">{this.state.question}</a>
             </div>
-            <div className="center-align col s6 m6 l3">
+            <div className="center-align col s6 m6 l3" onClick={() => this.increment('hear')}>
               <h5>Can't Hear/See</h5>
               <a href="#!">{this.state.hear}</a>
             </div>
-            <div className="center-align col s6 m6 l3">
+            <div className="center-align col s6 m6 l3" onClick={() => this.increment('break')}>
               <h5>Break</h5>
               <a href="#!">{this.state.break}</a>
             </div>
