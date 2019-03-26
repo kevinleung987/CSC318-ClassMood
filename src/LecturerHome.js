@@ -3,6 +3,7 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 import QuestionsList from './Questions';
 import NavBar from './Navbar';
+import M from "materialize-css";
 
 class LecturerHome extends React.Component {
   constructor() {
@@ -20,13 +21,37 @@ class LecturerHome extends React.Component {
     };
   }
 
+  componentDidMount() {
+    M.AutoInit();
+  }
+
   increment(mood) {
     const newState = this.state;
     newState[mood] += 1;
     this.setState(newState);
+    if (newState[mood] >= 10) {
+      M.Modal.getInstance(document.querySelector('.reset-mood')).open();
+    }
+  }
+
+  getTopMood() {
+    let topMood = Object.keys(this.state)[0];
+    Object.keys(this.state).forEach(mood => {
+      if (this.state[mood] > this.state[topMood]) {
+        topMood = mood;
+      }
+    });
+    return topMood;
+  }
+
+  resetTopMood() {
+    const newState = this.state;
+    newState[this.getTopMood()] = 0;
+    this.setState(newState);
   }
 
   render() {
+    const topMood = this.getTopMood();
     return (
       <div>
         <NavBar />
@@ -54,6 +79,15 @@ class LecturerHome extends React.Component {
         </div>
         <div className="right">
           <Link to="/settings" id="fixedButton" className="btn btn-floating btn-large cyan"><i className="material-icons">settings</i></Link>
+        </div>
+        <div className="modal black-text reset-mood">
+          <div className="modal-content">
+            <h4>The {topMood} counter has reached the threshold, would you like to reset it?</h4>
+          </div>
+          <div className="modal-footer">
+            <a href="#!" className="modal-close left green btn-flat" onClick={() => this.resetTopMood()}>Yes</a>
+            <a href="#!" className="modal-close right red btn-flat">No</a>
+          </div>
         </div>
       </div>
     );
