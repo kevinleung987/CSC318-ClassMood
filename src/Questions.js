@@ -50,7 +50,7 @@ class QuestionsList extends React.Component {
               : null}
             {this.props.isStudent ?
               <i className="right material-icons clickable"
-                onClick={() => this.upVote(index)}>arrow_upward</i>
+                onClick={() => this.upVote(index)}>thumb_up</i>
               : null}
             <b className="right votes">{question.votes}</b>
             {question.answered ? <b className="left question">(Answered)</b> : null}

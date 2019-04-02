@@ -60,19 +60,27 @@ class LecturerHome extends React.Component {
           <div className="row">
             <div className="center-align col s6 m6 l3" onClick={() => this.increment('confused')}>
               <h5>Confused</h5>
-              <a href="#!">{this.state.confused}</a>
+              <div className={this.state.confused > 7 ? 'yellow' : ''}>
+                <a href="#!"><h5>{this.state.confused}</h5></a>
+              </div>
             </div>
             <div className="center-align col s6 m6 l3" onClick={() => this.increment('question')}>
               <h5>Question</h5>
-              <a href="#!">{this.state.question}</a>
+              <div className={this.state.question > 7 ? 'yellow' : ''}>
+                <a href="#!"><h5>{this.state.question}</h5></a>
+              </div>
             </div>
             <div className="center-align col s6 m6 l3" onClick={() => this.increment('hear')}>
               <h5>Can't Hear/See</h5>
-              <a href="#!">{this.state.hear}</a>
+              <div className={this.state.hear > 7 ? 'yellow' : ''}>
+                <a href="#!"><h5>{this.state.hear}</h5></a>
+              </div>
             </div>
             <div className="center-align col s6 m6 l3" onClick={() => this.increment('break')}>
               <h5>Break</h5>
-              <a href="#!">{this.state.break}</a>
+              <div className={this.state.break > 7 ? 'yellow' : ''}>
+                <a href="#!"><h5>{this.state.break}</h5></a>
+              </div>
             </div>
           </div>
           <QuestionsList questions={this.questions} />
